@@ -1,18 +1,22 @@
 import Koa from "koa";
-import Router from "koa-router";
-
-const router = new Router();
+import bodyParser from "koa-bodyparser";
 
 const app = new Koa();
-const port = 10033;
+const port = 10001;
 
-app.use(async (ctx) => {
-    console.log(ctx);
+app.use(bodyParser());
+
+app.use((ctx) => {
     ctx.body = {
-        msg: "hello world",
+        msg: 1,
     };
 });
 
-app.use(router.routes());
+// app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(port);
+try {
+    app.listen(port);
+    console.log(`Koa starting and listening port: ${port}`);
+} catch {
+    console.log(`Koa starting error`);
+}
