@@ -1,22 +1,24 @@
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
+import KoaLogger from "koa-logger";
+import initRouter from "./router";
+import helmet from "koa-helmet";
+import mysql from "./mysql";
 
 const app = new Koa();
 const port = 10001;
 
+app.context.db = mysql;
+
 app.use(bodyParser());
+app.use(KoaLogger());
+app.use(helmet());
 
-app.use((ctx) => {
-    ctx.body = {
-        msg: 1,
-    };
-});
+initRouter(app);
 
-// app.use(router.routes()).use(router.allowedMethods());
+app.listen(port);
 
-try {
-    app.listen(port);
-    console.log(`Koa starting and listening port: ${port}`);
-} catch {
-    console.log(`Koa starting error`);
-}
+const output = `| Koa starting and listening port: ${port} |`;
+console.log("-".repeat(output.length));
+console.log(output);
+console.log("-".repeat(output.length));
