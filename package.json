@@ -1,39 +1,44 @@
 {
-  "name": "mlog-server",
-  "version": "1.0.0",
-  "author": "midolii",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "build": "rm -rf ./dist && tsc",
-    "start": "tsc dist/main.ts",
-    "dev": "nodemon --watch src -e ts,tsx --exec ts-node src/main.ts"
-  },
-  "dependencies": {
-    "koa": "^2.14.1",
-    "koa-bodyparser": "^4.3.0",
-    "koa-helmet": "^6.1.0",
-    "koa-logger": "^3.2.1",
-    "koa-router": "^12.0.0",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "@types/dotenv": "^8.2.0",
-    "@types/koa": "^2.13.5",
-    "@types/koa-bodyparser": "^4.3.10",
-    "@types/koa-logger": "^3.1.2",
-    "@types/koa-router": "^7.4.4",
-    "@types/mysql": "^2.15.21",
-    "@types/node": "^18.15.0",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
-    "dotenv": "^16.0.3",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "nodemon": "^2.0.21",
-    "prettier": "^2.8.4",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
-  }
+   "name": "mlog-server",
+   "version": "1.0.0",
+   "author": "midolii",
+   "license": "MIT",
+   "private": true,
+   "scripts": {
+      "build": "rm -rf ./dist && tsc",
+      "start": "ts-node src/index.ts",
+      "dev": "nodemon --watch src -e ts,tsx --exec ts-node src/main.ts",
+      "typeorm": "typeorm-ts-node-commonjs"
+   },
+   "dependencies": {
+      "koa": "^2.14.1",
+      "koa-bodyparser": "^4.3.0",
+      "koa-helmet": "^6.1.0",
+      "koa-logger": "^3.2.1",
+      "koa-router": "^12.0.0",
+      "moment": "^2.29.4",
+      "mysql2": "^3.2.0",
+      "pg": "^8.4.0",
+      "reflect-metadata": "^0.1.13",
+      "typeorm": "0.3.12"
+   },
+   "devDependencies": {
+      "@types/dotenv": "^8.2.0",
+      "@types/koa": "^2.13.5",
+      "@types/koa-bodyparser": "^4.3.10",
+      "@types/koa-logger": "^3.1.2",
+      "@types/koa-router": "^7.4.4",
+      "@types/moment": "^2.13.0",
+      "@types/node": "^16.11.10",
+      "@typescript-eslint/eslint-plugin": "^5.54.1",
+      "@typescript-eslint/parser": "^5.54.1",
+      "dotenv": "^16.0.3",
+      "eslint": "^8.36.0",
+      "eslint-config-prettier": "^8.7.0",
+      "eslint-plugin-prettier": "^4.2.1",
+      "nodemon": "^2.0.21",
+      "prettier": "^2.8.4",
+      "ts-node": "10.7.0",
+      "typescript": "4.5.2"
+   }
 }

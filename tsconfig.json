@@ -7,12 +7,21 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "strictPropertyInitialization": false,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports":true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
     "noEmit": true,
+    "typeRoots": [
+        "@types"
+    ]
   },
   "include": [
     ".eslintrc.js",
     "src/**/*.ts",
+    "src/**/*.entity.ts",
     "src/**/*.d.ts"
   ],
   "exclude": [
